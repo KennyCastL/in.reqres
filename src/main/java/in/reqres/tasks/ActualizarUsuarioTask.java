@@ -12,6 +12,7 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 public class ActualizarUsuarioTask implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
+
         actor.attemptsTo(
                 Put.to(Constants.getPutUser())
                         .with(
@@ -20,6 +21,8 @@ public class ActualizarUsuarioTask implements Task {
                                         .body(
                                                 actor.asksFor(ActualizarUsuarioData.actualizarData())
                                         )
+                                        .log()
+                                        .all()
                         )
         );
     }

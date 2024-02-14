@@ -8,9 +8,10 @@ public class ActualizarUsuarioData implements Question<UsuarioModel> {
 
     @Override
     public UsuarioModel answeredBy(Actor actor) {
-        return UsuarioModel.builder()
-                .name("Pepito Pereza")
-                .job("Ingeniero")
+        return UsuarioModel
+                .builder()
+                .name("Morterio Zambrano")
+                .job("Paseador de Perros a domicilio")
                 .build();
     }
 
