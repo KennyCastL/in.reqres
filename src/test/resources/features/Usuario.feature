@@ -21,4 +21,4 @@ Característica: Operaciones con el usuario
   @DelUser
   Escenario: Eliminar usuario exitoso
     Cuando el usuario consume el endpoint  se envia el usuario a eliminar
-    Entonces el servidor responde status code 204
+    Entonces el servidor debe responder status code 204
