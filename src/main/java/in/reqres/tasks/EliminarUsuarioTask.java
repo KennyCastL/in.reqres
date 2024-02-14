@@ -15,6 +15,8 @@ public class EliminarUsuarioTask implements Task {
                 Delete.from(Constants.getDelUser()).with(
                         requestSpecification -> requestSpecification
                                 .contentType(ContentType.JSON)
+                                .log()
+                                .all()
                 )
         );
     }
