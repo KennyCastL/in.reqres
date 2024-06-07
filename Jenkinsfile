@@ -3,29 +3,29 @@ import groovy.json.JsonSlurperClassic
 def jsonParse(def json){
   new groovy.json.JsonSlurperClassic().parseText(json)
 }
-pipeline{
+pipeline {
   agent any
-  eviroment{
+  evironment {
     appName = "variable"
     GRADLE_HOME = tool 'Gradle'
   }
-  Stages{
+  stages {
     stage("Build"){
-      steps{
-        script{
+      steps {
+        script {
           bat "${GRADLE_HOME}\\gradle build"
         }
       }
     }
   }
-  post{
-    always{
+  post {
+    always {
       echo "fase always"
     }
-     success{
+     success {
       echo "fase success"
     }
-     failure{
+     failure {
       echo "fase failure"
     }
   }
