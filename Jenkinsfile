@@ -5,7 +5,7 @@ def jsonParse(def json){
 }
 pipeline {
   agent any
-  evironment {
+  environment {
     appName = "variable"
     GRADLE_HOME = tool 'Gradle'
   }
