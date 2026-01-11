@@ -9,6 +9,9 @@ pipeline {
     appName = "variable"
     GRADLE_HOME = tool 'Gradle'
   }
+  tools {
+        jdk 'jdk17'
+    }
   stages {
     stage("Build"){
       steps {
