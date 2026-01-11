@@ -1,36 +1,29 @@
-import groovy.json.JsonSlurperClassic
-
-def jsonParse(def json){
-  new groovy.json.JsonSlurperClassic().parseText(json)
-}
 pipeline {
-  agent any
-  environment {
-    appName = "variable"
-    GRADLE_HOME = tool 'Gradle'
-  }
-  tools {
-        jdk 'jdk17'
-    }
-  stages {
-    stage("Build"){
-      steps {
-        script {
-          bat "\"%GRADLE_HOME%\\bin\\gradle.bat\" clean build"
-        }
-      }
-    }
-  }
-  post {
-    always {
-      echo "fase always"
-    }
-     success {
-      echo "fase success"
-    }
-     failure {
-      echo "fase failure"
-    }
-  }
-}
+    agent any
 
+    tools {
+        jdk 'jdk17'
+        gradle 'Gradle'
+    }
+
+    stages {
+        stage('Build') {
+            steps {
+                bat 'java -version'
+                bat 'gradle.bat clean build'
+            }
+        }
+    }
+
+    post {
+        always {
+            echo 'fase always'
+        }
+        success {
+            echo 'fase success'
+        }
+        failure {
+            echo 'fase failure'
+        }
+    }
+}
