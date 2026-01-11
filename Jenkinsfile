@@ -13,7 +13,7 @@ pipeline {
     stage("Build"){
       steps {
         script {
-          bat "${GRADLE_HOME\\bin\\gradle.bat}\\gradle build"
+          bat "\"%GRADLE_HOME%\\bin\\gradle.bat\" clean build"
         }
       }
     }
