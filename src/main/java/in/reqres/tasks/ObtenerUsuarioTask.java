@@ -4,6 +4,7 @@ import static in.reqres.constants.Constants.getGetUsers;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 import io.restassured.http.ContentType;
+import net.serenitybdd.rest.SerenityRest;
 import net.serenitybdd.screenplay.*;
 import net.serenitybdd.screenplay.rest.interactions.Get;
 
@@ -18,6 +19,8 @@ public class ObtenerUsuarioTask implements Task {
                                 .all()
                 )
         );
+        System.out.println("RESPONSE BODY:");
+        System.out.println(SerenityRest.lastResponse().asString());
     }
 
     public static ObtenerUsuarioTask listarUsuarios(){
